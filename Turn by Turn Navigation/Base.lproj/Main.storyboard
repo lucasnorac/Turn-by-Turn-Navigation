@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,71 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Turn_by_Turn_Navigation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qpX-nV-4fI">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Proceed to wherever and then in 500 metres turn left on some other street" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWE-cy-aU5">
+                                        <rect key="frame" x="8" y="20" width="359" height="68"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="IWE-cy-aU5" firstAttribute="leading" secondItem="qpX-nV-4fI" secondAttribute="leading" constant="8" id="17H-Us-Uac"/>
+                                    <constraint firstAttribute="trailing" secondItem="IWE-cy-aU5" secondAttribute="trailing" constant="8" id="3Lc-ag-77V"/>
+                                    <constraint firstItem="IWE-cy-aU5" firstAttribute="top" secondItem="qpX-nV-4fI" secondAttribute="top" constant="20" id="ebB-ck-HGv"/>
+                                    <constraint firstAttribute="height" constant="96" id="xcb-0D-AhY"/>
+                                    <constraint firstAttribute="bottom" secondItem="IWE-cy-aU5" secondAttribute="bottom" constant="8" id="zqk-T7-RIa"/>
+                                </constraints>
+                            </view>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="3eh-4q-37c">
+                                <rect key="frame" x="0.0" y="96" width="375" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="dXa-gx-WAF"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Yag-V2-7SW"/>
+                                </connections>
+                            </searchBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" showsUserLocation="YES" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rnG-zy-LBI">
+                                <rect key="frame" x="0.0" y="152" width="375" height="515"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="4MY-aL-6ow"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="3eh-4q-37c" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5YJ-4H-vya"/>
+                            <constraint firstItem="3eh-4q-37c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Iyo-Rm-2Hf"/>
+                            <constraint firstItem="qpX-nV-4fI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="N5J-X1-xot"/>
+                            <constraint firstItem="qpX-nV-4fI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PiZ-7g-D9Y"/>
+                            <constraint firstItem="rnG-zy-LBI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="RMq-cm-6dI"/>
+                            <constraint firstItem="qpX-nV-4fI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TKf-Fo-IoX"/>
+                            <constraint firstItem="rnG-zy-LBI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hp6-EU-QzB"/>
+                            <constraint firstItem="3eh-4q-37c" firstAttribute="top" secondItem="qpX-nV-4fI" secondAttribute="bottom" id="kHF-4K-CbC"/>
+                            <constraint firstItem="rnG-zy-LBI" firstAttribute="top" secondItem="3eh-4q-37c" secondAttribute="bottom" id="tJu-cf-Z41"/>
+                            <constraint firstItem="rnG-zy-LBI" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="yrI-Te-KAZ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="directionLabel" destination="IWE-cy-aU5" id="oBU-p9-m3T"/>
+                        <outlet property="mapa" destination="rnG-zy-LBI" id="dJo-Gk-JKJ"/>
+                        <outlet property="search" destination="3eh-4q-37c" id="mZj-Ra-Otg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>

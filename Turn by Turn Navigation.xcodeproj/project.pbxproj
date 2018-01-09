@@ -12,6 +12,8 @@
 		209B28B11FFB0C76003D2BD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 209B28AF1FFB0C76003D2BD6 /* Main.storyboard */; };
 		209B28B31FFB0C76003D2BD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 209B28B21FFB0C76003D2BD6 /* Assets.xcassets */; };
 		209B28B61FFB0C76003D2BD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 209B28B41FFB0C76003D2BD6 /* LaunchScreen.storyboard */; };
+		209B28BF1FFB0F93003D2BD6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 209B28BE1FFB0F93003D2BD6 /* MapKit.framework */; };
+		209B28C01FFB101B003D2BD6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 209B28B71FFB0C76003D2BD6 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,7 @@
 		209B28B21FFB0C76003D2BD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		209B28B51FFB0C76003D2BD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		209B28B71FFB0C76003D2BD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		209B28BE1FFB0F93003D2BD6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				209B28BF1FFB0F93003D2BD6 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +44,7 @@
 			children = (
 				209B28AA1FFB0C76003D2BD6 /* Turn by Turn Navigation */,
 				209B28A91FFB0C76003D2BD6 /* Products */,
+				209B28BD1FFB0F93003D2BD6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +67,14 @@
 				209B28B71FFB0C76003D2BD6 /* Info.plist */,
 			);
 			path = "Turn by Turn Navigation";
+			sourceTree = "<group>";
+		};
+		209B28BD1FFB0F93003D2BD6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				209B28BE1FFB0F93003D2BD6 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,6 +110,14 @@
 					209B28A71FFB0C76003D2BD6 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -123,6 +144,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				209B28C01FFB101B003D2BD6 /* Info.plist in Resources */,
 				209B28B61FFB0C76003D2BD6 /* LaunchScreen.storyboard in Resources */,
 				209B28B31FFB0C76003D2BD6 /* Assets.xcassets in Resources */,
 				209B28B11FFB0C76003D2BD6 /* Main.storyboard in Resources */,
